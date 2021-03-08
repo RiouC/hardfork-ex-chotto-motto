@@ -79,6 +79,7 @@ nav ul {
     list-style: none;
     margin-top: 1.5rem 0;
     padding: 0px;
+    display: inline-block;
 }
 
 /* les éléments de la liste affichés dans une ligne */
@@ -99,6 +100,58 @@ nav a {
 
 /* le lien dans la partie navigation en survol devient jaune  */
 nav a:hover {
+    /* transition: color 1s; */
+    /* transition: background-color 1s; */
+    transition: all 0.7s ease-out;
     color: white;
     background-color: black;
 }
+
+/* ------------------------------------------------- */
+
+nav > ul {
+    position: relative;
+    display: block;
+}
+
+nav li {
+    display: inline-flex;
+    /* display: inline-block; */
+}
+
+.dropdown {
+    display: inline-flex;
+    /* display: inline-block; */
+    /* position: absolute; */
+}
+
+.dropdown li {
+    line-height: 1.7;
+    display: block;
+    /* pas inline-block => va faire sur une ligne, impossible de selectionner certains choix */
+    visibility: hidden;
+    margin: 16px;
+    /* bottom: 50px; */
+}
+
+.dropdown:hover li {
+    visibility: visible;
+    opacity: 0.9;
+    display: block;
+    margin-left: 0px;;
+}
+
+.dropdown ul {
+    position: absolute;
+    bottom: 40px;
+}
+
+.dropdown:hover ul {
+    /* color: black; */
+    /* background-color: var(--sakamoto-yellow); */
+    /* display: block; */
+    width: auto;
+}
+
+
+
